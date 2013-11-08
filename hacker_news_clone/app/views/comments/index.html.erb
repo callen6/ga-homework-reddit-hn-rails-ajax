@@ -1,0 +1,12 @@
+<div id="nav_bar">
+		<img id="logo" src="https://scontent-b-lax.xx.fbcdn.net/hphotos-ash4/260393_181496591905630_724195_n.jpg" alt="hn favicon" width=15px/>
+		<div id="new_comment"><%= link_to "new |", new_comment_path %></div>
+</div>
+
+
+<div id="comments"> 
+	<% @comment.each do |comment| %>
+			<p><%= link_to comment.author, comment %></p>
+			<p><%= comment.body %></p>
+	<% end %>
+</div>

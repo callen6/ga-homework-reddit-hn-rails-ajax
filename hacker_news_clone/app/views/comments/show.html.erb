@@ -1,0 +1,4 @@
+<h1><%=@comment.title %></h1>
+<p><%=@comment.body %></p>
+<%= link_to 'edit', edit_comment_path(@comment) %>
+<div id"back_link"><%= link_to 'back', comments_path %></div>
