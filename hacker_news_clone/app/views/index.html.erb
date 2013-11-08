@@ -1,0 +1,11 @@
+<div id="nav_bar">
+		<img id="logo" src="https://scontent-b-lax.xx.fbcdn.net/hphotos-ash4/260393_181496591905630_724195_n.jpg" alt="hn favicon" width=15px/>
+		<div id="new_post"><&= link_to "new |", new_post_path %></div>
+</div>
+
+
+<div id="posts"> 
+	<% @posts.each do |post| %>
+		<p><%= link_to post.title, post.link %></p>
+	<% end %>
+</div>
