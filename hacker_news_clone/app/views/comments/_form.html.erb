@@ -1,5 +1,5 @@
 <div id="comment_form">
-<%= form_for(@comment) do |f| %>
+<%= form_for[@post, @comment] do |f| %>
   <div><%= f.label :author %>
   <%= f.text_field :author %>
   </div>

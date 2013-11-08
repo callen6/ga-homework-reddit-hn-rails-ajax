@@ -1,5 +1,6 @@
 <h1><%=@post.title %></h1>
 <p><%=@post.body %></p>
-<%= link_to 'comment', new_comment_path %>
+<%= link_to 'comment', new_comment_path(@post) %>
 <%= link_to 'edit', edit_post_path(@post) %>
 <div id"back_link"><%= link_to 'back', posts_path %></div>
+<%= render 'comments/form' %>

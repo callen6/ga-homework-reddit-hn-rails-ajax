@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+	before_action :load_post, only:[:create]
 	before_action :set_comment, only:[:show, :edit, :update, :destroy]
 	
 	def index
@@ -13,9 +14,9 @@ class CommentsController < ApplicationController
 	end
 
 	def create
-    @comment = Comment.new(commment_params)
+    @comment = @post.comments.build(commment_params)
       if @comment.save
-       redirect_to @comment
+       redirect_to @post
       else
         render action: 'new'
       end
@@ -39,6 +40,10 @@ class CommentsController < ApplicationController
 	end
 
 	private
+
+	def load_post
+		@post = Post.find(params[:post_id])
+	end
 
 	def set_comment
 		@comment = Comment.find(params[:id])
