@@ -5,8 +5,8 @@
 
 
 <div id="comments"> 
-	<% @comment.each do |comment| %>
-			<p><%= link_to comment.author, comment %></p>
-			<p><%= comment.body %></p>
+	<% @comments.each do |comment| %>
+		<p><%= link_to comment.author, comment %></p>
+		<p><%= comment.content %></p>
 	<% end %>
 </div>
