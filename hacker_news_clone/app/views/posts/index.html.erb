@@ -6,6 +6,10 @@
 
 <div id="posts"> 
 	<% @posts.each do |post| %>
-		<p><%= link_to post.title, post.link %></p>
+		<% if post.body.blank? %>
+			<p><%= link_to post.title, post.link %></p>
+		<% else %>
+			<%= link_to post.title, post %>
+		<% end %>
 	<% end %>
 </div>
